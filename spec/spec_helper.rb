@@ -15,7 +15,7 @@
 # it.
 #
 
-Dir[File.join(__dir__, '..', 'chapter2', '**', '*.rb')].each { |file| require file }
+Dir[File.join(__dir__, '..', 'chapter*', '**', '*.rb')].each { |file| require file }
 
 # Dir["chapter*/**/*.rb"].each { |file| require_relative "#{file}" }
 
