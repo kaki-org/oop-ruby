@@ -1,7 +1,6 @@
 # frozen_string_literal: true
 
 require 'rspec'
-# require './gear'
 
 describe Gear do
   let(:gear) { Gear.new(52, 11) }
