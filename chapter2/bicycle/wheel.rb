@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # Wheel クラスを定義
 class Wheel
   attr_reader :rim, :tire
