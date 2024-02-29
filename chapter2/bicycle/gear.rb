@@ -17,9 +17,13 @@ class Gear
 
   def gear_inches
     # ギアインチ = 車輪の直径 ✕ ギア比
+    diameter * ratio
+  end
+
+  def diameter
     # 車輪の直径 = リムの直径 ＋ タイヤの厚みの2倍
     #
     # タイヤはリムの周りを囲むので、直径を計算するためには2倍する
-    (rim + (tire * 2)) * ratio
+    rim + (tire * 2)
   end
 end
