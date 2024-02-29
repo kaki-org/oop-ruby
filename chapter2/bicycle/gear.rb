@@ -20,10 +20,12 @@ class Gear
     diameter * ratio
   end
 
-  def diameter
-    # 車輪の直径 = リムの直径 ＋ タイヤの厚みの2倍
-    #
-    # タイヤはリムの周りを囲むので、直径を計算するためには2倍する
-    rim + (tire * 2)
+  Wheel = Struct.new(:rim, :tire) do
+    def diameter
+      # 車輪の直径 = リムの直径 ＋ タイヤの厚みの2倍
+      #
+      # タイヤはリムの周りを囲むので、直径を計算するためには2倍する
+      rim + (tire * 2)
+    end
   end
 end
