@@ -10,6 +10,14 @@ describe Gear do
       expect(gear.ratio).to eq 4.7272727272727275
     end
   end
+  context 'ホイールがリム26、タイヤ1.5のとき' do
+    let(:wheel) { Wheel.new(26, 1.5) }
+    let(:gear) { Gear.new(52, 11, wheel) }
+
+    it 'ギアインチが137.0909090909091であること' do
+      expect(gear.gear_inches).to eq 137.0909090909091
+    end
+  end
   context 'ギアが30,コグが27の場合' do
     let(:gear) { Gear.new(30, 27) }
 

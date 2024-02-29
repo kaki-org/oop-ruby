@@ -2,13 +2,12 @@
 
 # Gearクラスを定義
 class Gear
-  attr_reader :chainring, :cog, :rim, :tire
+  attr_reader :chainring, :cog, :wheel
 
-  def initialize(chainring, cog, rim, tire)
+  def initialize(chainring, cog, wheel = nil)
     @chainring = chainring
     @cog = cog
-    @rim = rim
-    @tire = tire
+    @wheel = wheel
   end
 
   def ratio
@@ -17,15 +16,6 @@ class Gear
 
   def gear_inches
     # ギアインチ = 車輪の直径 ✕ ギア比
-    diameter * ratio
-  end
-
-  Wheel = Struct.new(:rim, :tire) do
-    def diameter
-      # 車輪の直径 = リムの直径 ＋ タイヤの厚みの2倍
-      #
-      # タイヤはリムの周りを囲むので、直径を計算するためには2倍する
-      rim + (tire * 2)
-    end
+    wheel.diameter * ratio
   end
 end
