@@ -2,12 +2,13 @@
 
 # Gearクラスを定義
 class Gear
-  attr_reader :chainring, :cog, :wheel
+  attr_reader :chainring, :cog, :wheel, :opt_bool
 
-  def initialize(chainring, cog, wheel = nil)
+  def initialize(chainring: 40, cog: 18, wheel: nil, opt_bool: true)
     @chainring = chainring
     @cog = cog
     @wheel = wheel
+    @opt_bool = opt_bool
   end
 
   def ratio
@@ -16,6 +17,12 @@ class Gear
 
   def gear_inches
     # ギアインチ = 車輪の直径 ✕ ギア比
-    wheel.diameter * ratio
+    diameter * ratio
+  end
+
+  private
+
+  def diameter
+    wheel.diameter
   end
 end
