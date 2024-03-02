@@ -2,12 +2,13 @@
 
 # Gearクラスを定義
 class Gear
-  attr_reader :chainring, :cog, :wheel
+  attr_reader :chainring, :cog, :wheel, :opt_bool
 
-  def initialize(chainring: 40, cog: 18, wheel: nil)
+  def initialize(chainring: 40, cog: 18, wheel: nil, opt_bool: true)
     @chainring = chainring
     @cog = cog
     @wheel = wheel
+    @opt_bool = opt_bool
   end
 
   def ratio

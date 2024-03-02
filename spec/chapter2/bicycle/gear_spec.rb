@@ -9,6 +9,18 @@ describe Gear do
     it 'ギア比が2.2222222222222223であること' do
       expect(gear.ratio).to eq 2.2222222222222223
     end
+
+    it 'オプション真偽値がtrueであること' do
+      expect(gear.opt_bool).to be_truthy
+    end
+  end
+
+  context 'オプション真偽値にfalseを指定した場合' do
+    let(:gear) { described_class.new(opt_bool: false) }
+
+    it 'オプション真偽値がfalseであること' do
+      expect(gear.opt_bool).to be_falsey
+    end
   end
 
   context 'ギアが30,コグが27の場合' do
