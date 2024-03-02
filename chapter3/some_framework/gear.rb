@@ -1,7 +1,8 @@
 # frozen_string_literal: true
 
-# Gearが外部インターフェースの一部の場合
+# SomeFrameworkは他社製のアプリなどを模倣している
 module SomeFramework
+  # Gearが外部インターフェースの一部の場合
   class Gear
     attr_reader :chainring, :cog, :wheel
 
