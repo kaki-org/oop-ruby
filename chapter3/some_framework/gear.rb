@@ -11,6 +11,8 @@ module SomeFramework
       @wheel = wheel
     end
 
+    # 依存オブジェクト(Wheel)を注入することでGearは変更に強くなる
+    # diameterメソッドがあることを前提としている
     def gear_inches
       ratio * wheel.diameter
     end
