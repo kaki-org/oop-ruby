@@ -16,6 +16,12 @@ class Gear
 
   def gear_inches
     # ギアインチ = 車輪の直径 ✕ ギア比
-    wheel.diameter * ratio
+    diameter * ratio
+  end
+
+  private
+
+  def diameter
+    wheel.diameter
   end
 end
