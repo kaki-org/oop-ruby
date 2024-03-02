@@ -3,6 +3,14 @@
 require 'rspec'
 
 describe Gear do
+  context 'ギアとコグに何も指定しない場合' do
+    let(:gear) { described_class.new }
+
+    it 'ギア比が2.2222222222222223であること' do
+      expect(gear.ratio).to eq 2.2222222222222223
+    end
+  end
+
   context 'ギアが30,コグが27の場合' do
     let(:gear) { described_class.new(chainring: 30, cog: 27) }
 
