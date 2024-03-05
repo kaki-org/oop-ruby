@@ -1,31 +1,31 @@
-# 旅行の準備が複雑になった
+# 旅行の準備はよりかんたんになる
 class Trip
   attr_reader :bicycles, :customers, :vehicle
 
   # この 'mechanic' 引数はどんなクラスのものでも良い
   def prepare(preparers)
-    preparers.each do |preparer|
-      case preparer
-      when Mechanic
-        preparer.prepare_bicycles(bicycles)
-      when TripCoordinator
-        preparer.buy_food(customers)
-      when Driver
-        preparer.gas_up(vehicle)
-        preparer.fill_water_tank(vehicle)
-      end
-    end
+    preparers.each { |preparer| preparer.prepare_trip(self) }
   end
 end
 
-# TripCoordinatorとDriverクラスも追加された
+# すべての準備者(Preparer)は'prepare_trip'に応答するダック
 class TripCoordinator
+  def prepare_trip(trip)
+    buy_food(trip.customers)
+  end
+
   def buy_food(customers)
     # ...
   end
 end
 
 class Driver
+  def prepare_trip(trip)
+    vehicle = trip.vehicle
+    gas_up(vehicle)
+    fill_water_tank(vehicle)
+  end
+
   def gas_up(vehicle)
     # ...
   end
@@ -35,13 +35,10 @@ class Driver
   end
 end
 
-# Mechanicクラスも追加された
 class Mechanic
-  def prepare_bicycles(bicycles)
-    bicycles.each { |bicycle| prepare_bicycle(bicycle) }
-  end
-
-  def prepare_bicycle(bicycle)
-    # ...
+  def prepare_trip(trip)
+    trip.bicycles.each do |bicycle|
+      prepare_bicycle(bicycle)
+    end
   end
 end
