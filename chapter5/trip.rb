@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 # 旅行の準備はよりかんたんになる
 class Trip
   attr_reader :bicycles, :customers, :vehicle
@@ -19,6 +21,7 @@ class TripCoordinator
   end
 end
 
+# ドライバー
 class Driver
   def prepare_trip(trip)
     vehicle = trip.vehicle
@@ -35,6 +38,7 @@ class Driver
   end
 end
 
+# 整備士
 class Mechanic
   def prepare_trip(trip)
     trip.bicycles.each do |bicycle|
