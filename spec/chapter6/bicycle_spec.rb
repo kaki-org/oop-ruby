@@ -15,7 +15,7 @@ describe Bicycle do
     end
 
     it 'テープカラーがnilであること' do
-      expect(bicycle.spares[:tape_color]).to be_nil
+      expect(bicycle.tape_color).to be_nil
     end
   end
 
@@ -31,7 +31,7 @@ describe Bicycle do
     end
 
     it 'テープカラーが赤であること' do
-      expect(bicycle.spares[:tape_color]).to eq 'red'
+      expect(bicycle.tape_color).to eq 'red'
     end
   end
 end
