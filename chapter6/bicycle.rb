@@ -2,20 +2,30 @@
 
 # 自転車
 class Bicycle
-  attr_reader :size, :tape_color
+  attr_reader :style, :size, :tape_color, :front_shock, :rear_shock
 
-  def initialize(size: nil, tape_color: nil)
+  def initialize(style: :road, size: nil, tape_color: nil, front_shock: nil, rear_shock: nil)
+    @style = style
     @size = size
     @tape_color = tape_color
+    @front_shock = front_shock
+    @rear_shock = rear_shock
   end
 
-  # すべての自転車はデフォルト値として
-  # 同じタイヤサイズとチェーンサイズを持つ
+  # "style"の確認は危険な道へ進む一歩
   def spares
-    {
-      chain: '10-speed',
-      tire_size: '23',
-      tape_color:
-    }
+    if style == :road
+      {
+        chain: '10-speed',
+        tire_size: '23', # milimeters
+        tape_color:
+      }
+    else # styleがmountainの場合
+      {
+        chain: '10-speed',
+        tire_size: '2.1', # inches
+        rear_shock:
+      }
+    end
   end
 end
