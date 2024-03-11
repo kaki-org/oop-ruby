@@ -34,20 +34,4 @@ describe Bicycle do
       expect(bicycle.tape_color).to eq 'red'
     end
   end
-
-  context 'マウンテンバイクの場合' do
-    let(:bicycle) { described_class.new(style: :mountain) }
-
-    it 'タイヤサイズが2.1であること' do
-      expect(bicycle.spares[:tire_size]).to eq '2.1'
-    end
-
-    it 'チェーンが10-speedであること' do
-      expect(bicycle.spares[:chain]).to eq '10-speed'
-    end
-
-    it 'リアショックがnilであること' do
-      expect(bicycle.rear_shock).to be_nil
-    end
-  end
 end
