@@ -14,7 +14,7 @@ describe MountainBike do
       expect(mountain_bike.spares).to eq(
         chain: '10-speed',
         tire_size: '23', # 間違い
-        tape_color: nil, # 不適切
+        # tape_color: nil, # 不適切
         rear_shock: 'Fox',
         front_shock: 'Manitou'
       )

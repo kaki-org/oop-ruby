@@ -4,10 +4,10 @@
 class MountainBike < Bicycle
   attr_reader :front_shock, :rear_shock
 
-  def initialize(size: nil, tape_color: nil, front_shock: nil, rear_shock: nil)
+  def initialize(size: nil, front_shock: nil, rear_shock: nil)
     @front_shock = front_shock
     @rear_shock = rear_shock
-    super(size:, tape_color:)
+    super(size:)
   end
 
   # すべての自転車はデフォルト値として
