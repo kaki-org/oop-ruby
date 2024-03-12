@@ -2,7 +2,7 @@
 
 require 'rspec'
 
-describe Bicycle do
+describe RoadBike do
   context '何も指定しない場合' do
     let(:bicycle) { described_class.new }
 
