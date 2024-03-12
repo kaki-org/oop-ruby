@@ -16,3 +16,12 @@ classDiagram
 ```
 
 BicycleがRoadBikeをもってしまっていて、MountainBikeがRoadBikeも継承してしまう。
+
+## 最終的な目標
+
+```mermaid
+classDiagram
+  Bicycle <|-- MountainBike
+  Bicycle <|-- RoadBike
+  <<abstract>> Bicycle 
+```
