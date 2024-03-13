@@ -13,7 +13,7 @@ describe MountainBike do
     it 'スペアが正しいこと' do
       expect(mountain_bike.spares).to eq(
         chain: '10-speed',
-        tire_size: '23', # 間違い
+        tire_size: '2.1',
         rear_shock: 'Fox',
         front_shock: 'Manitou'
       )

@@ -4,9 +4,9 @@
 class RoadBike < Bicycle
   attr_reader :tape_color
 
-  def initialize(size: nil, chain: nil, tape_color: nil)
+  def initialize(size: nil, chain: nil, tire_size: nil, tape_color: nil)
     @tape_color = tape_color
-    super(size:, chain:)
+    super(size:, chain:, tire_size:)
   end
 
   # すべての自転車はデフォルト値として
