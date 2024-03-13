@@ -2,7 +2,7 @@
 
 # マウンテンバイク
 class MountainBike < Bicycle
-  attr_reader :size, :chain, :tire_size, :front_shock, :rear_shock
+  attr_reader :front_shock, :rear_shock
 
   def initialize(size: nil, chain: nil, front_shock: nil, rear_shock: nil)
     @front_shock = front_shock

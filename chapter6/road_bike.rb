@@ -2,7 +2,7 @@
 
 # ロードバイク
 class RoadBike < Bicycle
-  attr_reader :size, :chain, :tire_size, :tape_color
+  attr_reader :tape_color
 
   def initialize(size: nil, chain: nil, tape_color: nil)
     @tape_color = tape_color
@@ -11,6 +11,7 @@ class RoadBike < Bicycle
 
   # すべての自転車はデフォルト値として
   # 同じタイヤサイズとチェーンサイズを持つ
+  # ロードバイクはデフォルト値としてテープカラーも持つ
   def spares
     super.merge(tape_color:)
   end
