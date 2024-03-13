@@ -2,12 +2,18 @@
 
 # リカンベントバイク
 class RecumbentBike < Bicycle
-  def initialize(size: nil, chain: nil, tape_color: nil)
-    @tape_color = tape_color
-    super(size:, chain:)
+  attr_reader :flag
+
+  def initialize(size: nil, chain: '9-speed', flag: nil)
+    @flag = flag # superを忘れる
+    # super(size:, chain:)
   end
 
   def spares
-    super.merge(tape_color:)
+    super.merge(flag:)
+  end
+
+  def default_tire_size
+    '28'
   end
 end
