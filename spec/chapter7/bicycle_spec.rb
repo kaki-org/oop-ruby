@@ -10,7 +10,7 @@ describe Bicycle do
     let(:bicycle) { described_class.new(tire_size: 27) }
 
     it 'スケジュールされているかどうかを返す' do
-      expect(bicycle.schedulable?(starting, ending)).to be_truthy
+      expect(bicycle).to be_schedulable(starting, ending)
     end
   end
 end
