@@ -12,5 +12,9 @@ describe Mechanic do
     it 'スケジュールされているかどうかを返す' do
       expect(mechanic).to be_schedulable(starting, ending)
     end
+
+    it 'lead_daysを返す' do
+      expect(mechanic.lead_days).to eq(4)
+    end
   end
 end

@@ -12,5 +12,9 @@ describe Vehicle do
     it 'スケジュールされているかどうかを返す' do
       expect(vehicle).to be_schedulable(starting, ending)
     end
+
+    it 'lead_daysを返す' do
+      expect(vehicle.lead_days).to eq(3)
+    end
   end
 end

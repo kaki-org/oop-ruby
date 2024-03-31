@@ -12,5 +12,9 @@ describe Bicycle do
     it 'スケジュールされているかどうかを返す' do
       expect(bicycle).to be_schedulable(starting, ending)
     end
+
+    it 'lead_daysを返す' do
+      expect(bicycle.lead_days).to eq(1)
+    end
   end
 end
