@@ -28,7 +28,7 @@ describe Parts do
       expect(mountain_bike.size).to eq 'L'
     end
 
-    it 'スペアが正しいこと' do
+    it 'スペアが正しいこと' do # rubocop:disable RSpec/ExampleLength
       expect(mountain_bike.spares).to eq(
         tire_size: '2.1',
         chain: '10-speed',
