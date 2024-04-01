@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
-# ロードバイク
-class RoadBike < Bicycle
+# ロードバイクのパーツ
+class RoadBikeParts < Parts
   attr_reader :tape_color
 
   def post_initialize(args)

@@ -1,11 +1,13 @@
 # frozen_string_literal: true
 
-# マウンテンバイク
-class MountainBike < Bicycle
+require_relative 'parts'
+
+# マウンテンバイクのパーツ
+class MountainBikeParts < Parts
   attr_reader :front_shock, :rear_shock
 
   def post_initialize(args)
-    @front_shock = args[:front_shock]
+    @front_shock = args[:front_shock] || default_front_shock
     @rear_shock = args[:rear_shock]
   end
 
@@ -15,5 +17,9 @@ class MountainBike < Bicycle
 
   def default_tire_size
     '2.1'
+  end
+
+  def default_front_shock
+    'Manitou'
   end
 end
