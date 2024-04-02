@@ -10,6 +10,22 @@ describe Parts do # rubocop:disable RSpec/MultipleMemoizedHelpers
   let(:rear_shock) { Part.new(name: 'rear_shock', description: 'Fox') }
   let(:front_shock) { Part.new(name: 'front_shock', description: 'Manitou', needs_spare: false) }
 
+  context 'パーツ全体をテストする場合' do
+    let(:road_bike_parts) { described_class.new([chain, road_tire, tape]) }
+    let(:road_bike) { ::Chapter8::Bicycle.new(size: 'L', parts: road_bike_parts) }
+    let(:mountain_bike_parts) { described_class.new([chain, mountain_tire, front_shock, rear_shock]) }
+    let(:mountain_bike) { ::Chapter8::Bicycle.new(size: 'M', parts: mountain_bike_parts) }
+    let(:combo_parts) { mountain_bike_parts + road_bike_parts }
+
+    it 'スペアのサイズにこたえること' do
+      expect(road_bike.spares.size).to eq 3
+    end
+
+    it '+でPartsを結合できること' do
+      expect(combo_parts.size).to eq 7
+    end
+  end
+
   context 'ロードバイクの場合' do # rubocop:disable RSpec/MultipleMemoizedHelpers
     let(:parts) { described_class.new([chain, road_tire, tape]) }
     let(:road_bike) { ::Chapter8::Bicycle.new(size: 'L', parts:) }
@@ -26,14 +42,6 @@ describe Parts do # rubocop:disable RSpec/MultipleMemoizedHelpers
           tape
         ]
       )
-    end
-
-    it 'スペアのサイズにこたえること' do
-      expect(road_bike.spares.size).to eq 3
-    end
-
-    it 'partsがサイズにこたえること' do
-      expect(parts.size).to eq 3
     end
   end
 
