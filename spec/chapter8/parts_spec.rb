@@ -27,6 +27,14 @@ describe Parts do # rubocop:disable RSpec/MultipleMemoizedHelpers
         ]
       )
     end
+
+    it 'スペアのサイズにこたえること' do
+      expect(road_bike.spares.size).to eq 3
+    end
+
+    it 'partsがサイズにこたえること' do
+      expect(parts.size).to eq 3
+    end
   end
 
   context 'マウンテンバイクの場合' do # rubocop:disable RSpec/MultipleMemoizedHelpers
