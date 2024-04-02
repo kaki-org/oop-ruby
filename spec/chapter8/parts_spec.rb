@@ -24,6 +24,10 @@ describe Parts do # rubocop:disable RSpec/MultipleMemoizedHelpers
     it '+でPartsを結合できること' do
       expect(combo_parts.size).to eq 7
     end
+
+    it 'sparesも理解できること' do
+      expect(combo_parts.spares).to be_truthy
+    end
   end
 
   context 'ロードバイクの場合' do # rubocop:disable RSpec/MultipleMemoizedHelpers
