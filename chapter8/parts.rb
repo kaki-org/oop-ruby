@@ -11,4 +11,8 @@ class Parts
   def spares
     parts.select(&:needs_spare)
   end
+
+  def size
+    parts.size
+  end
 end
