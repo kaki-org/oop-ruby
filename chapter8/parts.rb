@@ -1,15 +1,18 @@
 # frozen_string_literal: true
 
+require 'forwardable'
+
 # 自転車のパーツ
-class Parts < Array
-  attr_reader :parts
+class Parts
+  extend Forwardable
+  def_delegators :@parts, :size, :each
+  include Enumerable
 
   def initialize(parts)
-    super(parts)
     @parts = parts
   end
 
   def spares
-    parts.select(&:needs_spare)
+    select(&:needs_spare)
   end
 end

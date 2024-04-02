@@ -15,18 +15,13 @@ describe Parts do # rubocop:disable RSpec/MultipleMemoizedHelpers
     let(:road_bike) { ::Chapter8::Bicycle.new(size: 'L', parts: road_bike_parts) }
     let(:mountain_bike_parts) { described_class.new([chain, mountain_tire, front_shock, rear_shock]) }
     let(:mountain_bike) { ::Chapter8::Bicycle.new(size: 'M', parts: mountain_bike_parts) }
-    let(:combo_parts) { mountain_bike_parts + road_bike_parts }
 
     it 'スペアのサイズにこたえること' do
       expect(road_bike.spares.size).to eq 3
     end
 
-    it '+でPartsを結合できること' do
-      expect(combo_parts.size).to eq 7
-    end
-
-    it 'sparesも理解できること' do
-      expect(combo_parts.spares).to be_truthy
+    it 'パーツのサイズにこたえること' do
+      expect(road_bike.parts.size).to eq 3
     end
   end
 
