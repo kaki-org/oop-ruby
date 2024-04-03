@@ -10,7 +10,7 @@ describe Parts do # rubocop:disable RSpec/MultipleMemoizedHelpers
   let(:rear_shock) { Part.new(name: 'rear_shock', description: 'Fox') }
   let(:front_shock) { Part.new(name: 'front_shock', description: 'Manitou', needs_spare: false) }
 
-  context 'パーツ全体をテストする場合' do
+  context 'パーツ全体をテストする場合' do # rubocop:disable RSpec/MultipleMemoizedHelpers
     let(:road_bike_parts) { described_class.new([chain, road_tire, tape]) }
     let(:road_bike) { ::Chapter8::Bicycle.new(size: 'L', parts: road_bike_parts) }
     let(:mountain_bike_parts) { described_class.new([chain, mountain_tire, front_shock, rear_shock]) }
