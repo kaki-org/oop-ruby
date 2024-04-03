@@ -13,7 +13,7 @@ describe ::Chapter8::Bicycle do
     end
 
     it 'リカンベントバイクはバイクであること' do
-      expect(recumbent_bike).to be_an_instance_of(::Chapter8::Bicycle)
+      expect(recumbent_bike).to be_an_instance_of(described_class)
     end
 
     it 'リカンベントバイクのサイズが正しいこと' do
