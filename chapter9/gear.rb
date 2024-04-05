@@ -13,7 +13,7 @@ class Gear
 
   def gear_inches
     # ギアインチ = ギア比 ✕ 車輪の直径
-    ratio * Wheel.new(rim, tire).diameter
+    ratio * Wheel.new(rim:, tire:).diameter
   end
 
   def ratio
