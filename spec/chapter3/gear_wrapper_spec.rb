@@ -4,7 +4,8 @@ require 'rspec'
 
 describe GearWrapper do
   context 'Wrapperを通してギアを作成する場合' do
-    let(:gear) { described_class.gear(chainring: 52, cog: 11, wheel: Wheel.new(rim: 26, tire: 1.5)) }
+    let(:wheel) { Wheel.new(rim: 26, tire: 1.5) }
+    let(:gear) { described_class.gear(chainring: 52, cog: 11, wheel:) }
 
     it 'ギア比が4.7272727272727275であること' do
       expect(gear.ratio).to eq 4.7272727272727275
@@ -16,7 +17,8 @@ describe GearWrapper do
   end
 
   context '引数の順番が変わっている場合' do
-    let(:gear) { described_class.gear(wheel: Wheel.new(rim: 26, tire: 1.5), chainring: 52, cog: 11) }
+    let(:wheel) { Wheel.new(rim: 26, tire: 1.5) }
+    let(:gear) { described_class.gear(wheel:, chainring: 52, cog: 11) }
 
     it 'ギア比が4.7272727272727275であること' do
       expect(gear.ratio).to eq 4.7272727272727275
