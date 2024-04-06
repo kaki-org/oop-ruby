@@ -2,6 +2,7 @@
 
 require 'rspec'
 require 'shared_examples/bicycle_shared_example'
+require 'shared_examples/bicycle_subclass_example'
 
 describe RecumbentBike do
   context '何も指定しない場合' do
@@ -26,5 +27,6 @@ describe RecumbentBike do
     end
 
     it_behaves_like 'a bicycle'
+    it_behaves_like 'a bicycle subclass'
   end
 end
