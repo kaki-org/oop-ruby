@@ -11,4 +11,16 @@ shared_examples 'a bicycle' do
   it 'responds to chain' do
     expect(subject).to respond_to(:chain)
   end
+
+  it 'responds to size' do
+    expect(subject).to respond_to(:size)
+  end
+
+  it 'responds to tire_size' do
+    expect(subject).to respond_to(:tire_size)
+  end
+
+  it 'responds to spares' do
+    expect(subject).to respond_to(:spares)
+  end
 end
