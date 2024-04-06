@@ -9,6 +9,7 @@ describe ::Trip do
     end
   end
 
+  # 受信メッセージの存在をテスト
   describe ::Mechanic do
     let(:object) { described_class.new }
     let(:trip) { object }
@@ -28,5 +29,17 @@ describe ::Trip do
     let(:trip) { object }
 
     it_behaves_like 'a preparer'
+  end
+
+  context 'prepare_tripが呼ばれたとき' do
+    let(:preparer) { instance_double('Preparer') }
+    let(:trip) { described_class.new }
+
+    # 送信メッセージのテスト
+    it 'Preparerにprepare_tripが呼ばれること' do
+      allow(preparer).to receive(:prepare_trip)
+      trip.prepare([preparer])
+      expect(preparer).to have_received(:prepare_trip).with(trip)
+    end
   end
 end
