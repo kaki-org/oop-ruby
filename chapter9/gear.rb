@@ -2,13 +2,14 @@
 
 # Gearクラスを定義
 class Gear
-  attr_reader :chainring, :cog, :rim, :tire
+  attr_reader :chainring, :cog, :rim, :tire, :observer
 
-  def initialize(chainring: nil, cog: nil, rim: nil, tire: nil)
+  def initialize(chainring: nil, cog: nil, rim: nil, tire: nil, observer: nil)
     @chainring = chainring
     @cog = cog
     @rim = rim
     @tire = tire
+    @observer = observer
   end
 
   def gear_inches
@@ -18,5 +19,19 @@ class Gear
 
   def ratio
     chainring / cog.to_f
+  end
+
+  def cog=(cog)
+    @cog = cog
+    changed
+  end
+
+  def chainring=(chainring)
+    @chainring = chainring
+    changed
+  end
+
+  def changed
+    observer.changed(chainring, cog)
   end
 end
