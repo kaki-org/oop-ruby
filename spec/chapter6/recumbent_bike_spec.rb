@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'rspec'
+require 'shared_examples/bicycle_shared_example'
 
 describe RecumbentBike do
   context '何も指定しない場合' do
@@ -23,5 +24,7 @@ describe RecumbentBike do
         flag: 'tall and orange'
       )
     end
+
+    it_behaves_like 'a bicycle'
   end
 end

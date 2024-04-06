@@ -1,6 +1,7 @@
 # frozen_string_literal: true
 
 require 'rspec'
+require 'shared_examples/bicycle_shared_example'
 
 describe RoadBike do
   context '何も指定しない場合' do
@@ -33,5 +34,7 @@ describe RoadBike do
     it 'テープカラーが赤であること' do
       expect(road_bike.tape_color).to eq 'red'
     end
+
+    it_behaves_like 'a bicycle'
   end
 end
