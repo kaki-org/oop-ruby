@@ -14,10 +14,6 @@ class StubbedBike < ::Chapter6::Bicycle
   end
 end
 
-describe StubbedBike do
-  it_behaves_like 'a bicycle subclass'
-end
-
 describe ::Chapter6::Bicycle do
   context 'タイヤサイズ0の自転車の場合' do
     let(:bike) { described_class.new(tire_size: 0) }
@@ -47,5 +43,9 @@ describe ::Chapter6::Bicycle do
         tire_size: 0
       )
     end
+  end
+
+  describe StubbedBike do
+    it_behaves_like 'a bicycle subclass'
   end
 end
