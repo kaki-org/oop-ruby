@@ -4,7 +4,7 @@ require 'rspec'
 require 'shared_examples/bicycle_shared_example'
 require 'shared_examples/bicycle_subclass_example'
 
-describe RoadBike do
+describe ::Chapter6::RoadBike do
   context '何も指定しない場合' do
     let(:road_bike) { described_class.new }
 

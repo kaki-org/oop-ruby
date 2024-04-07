@@ -3,7 +3,7 @@
 require 'rspec'
 require 'date'
 
-describe Vehicle do
+describe ::Chapter7::Vehicle do
   context 'schedulable?を呼び出したとき' do
     let(:starting) { Date.parse('2015/09/04') }
     let(:ending) { Date.parse('2015/09/10') }
