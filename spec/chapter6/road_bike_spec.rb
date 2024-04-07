@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 require 'rspec'
+require 'shared_examples/bicycle_shared_example'
+require 'shared_examples/bicycle_subclass_example'
 
 describe RoadBike do
   context '何も指定しない場合' do
@@ -31,7 +33,10 @@ describe RoadBike do
     end
 
     it 'テープカラーが赤であること' do
-      expect(road_bike.tape_color).to eq 'red'
+      expect(road_bike.local_spares[:tape_color]).to eq 'red'
     end
+
+    it_behaves_like 'a bicycle'
+    it_behaves_like 'a bicycle subclass'
   end
 end

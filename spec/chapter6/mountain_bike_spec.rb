@@ -1,6 +1,8 @@
 # frozen_string_literal: true
 
 require 'rspec'
+require 'shared_examples/bicycle_shared_example'
+require 'shared_examples/bicycle_subclass_example'
 
 describe MountainBike do
   context 'Sサイズのマウンテンバイクの場合' do
@@ -18,5 +20,8 @@ describe MountainBike do
         front_shock: 'Manitou'
       )
     end
+
+    it_behaves_like 'a bicycle'
+    it_behaves_like 'a bicycle subclass'
   end
 end
