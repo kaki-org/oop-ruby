@@ -1,4 +1,5 @@
 # 共通のテストを定義
+# 書籍ではBicycleInterfaceTestとしていたもの
 shared_examples 'a bicycle' do
   it 'responds to default_chain' do
     expect(subject).to respond_to(:default_chain)
