@@ -33,7 +33,7 @@ describe RoadBike do
     end
 
     it 'テープカラーが赤であること' do
-      expect(road_bike.tape_color).to eq 'red'
+      expect(road_bike.local_spares[:tape_color]).to eq 'red'
     end
 
     it_behaves_like 'a bicycle'
