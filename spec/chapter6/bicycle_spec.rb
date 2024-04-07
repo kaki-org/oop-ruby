@@ -2,6 +2,7 @@
 
 require 'rspec'
 require 'shared_examples/bicycle_shared_example'
+require 'shared_examples/bicycle_subclass_example'
 
 class StubbedBike < ::Chapter6::Bicycle
   def default_tire_size
@@ -11,6 +12,10 @@ class StubbedBike < ::Chapter6::Bicycle
   def local_spares
     { saddle: 'painful' }
   end
+end
+
+describe StubbedBike do
+  it_behaves_like 'a bicycle subclass'
 end
 
 describe ::Chapter6::Bicycle do
@@ -27,7 +32,7 @@ describe ::Chapter6::Bicycle do
     let(:bike) { subject }
     let(:stubbed_bike) { StubbedBike.new }
 
-    it 'サブクラスはdefault_tire_sizeの実装が強制されていること' do
+    it 'サブクラスにdefault_tire_sizeの実装を強制していること' do
       expect do
         bike.default_tire_size
       end.to raise_error(NotImplementedError, 'This Chapter6::Bicycle cannot respond to:')
