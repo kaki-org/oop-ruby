@@ -1,22 +1,23 @@
 # frozen_string_literal: true
 
 require_relative './schedulable'
+module Chapter7
+  # 整備士
+  class Mechanic
+    include ::Chapter7::Schedulable
 
-# 整備士
-class Mechanic
-  include ::Schedulable
+    # Scheduleを注入し、初期値を設定する
+    def initialize(**args)
+      post_initialize(args)
+    end
 
-  # Scheduleを注入し、初期値を設定する
-  def initialize(**args)
-    post_initialize(args)
-  end
+    def post_initialize(_args)
+      nil
+    end
 
-  def post_initialize(_args)
-    nil
-  end
-
-  # bicycleがスケジュール可能となるまでの準備日数を返す
-  def lead_days
-    4
+    # bicycleがスケジュール可能となるまでの準備日数を返す
+    def lead_days
+      4
+    end
   end
 end

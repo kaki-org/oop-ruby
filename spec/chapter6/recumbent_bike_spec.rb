@@ -4,7 +4,7 @@ require 'rspec'
 require 'shared_examples/bicycle_shared_example'
 require 'shared_examples/bicycle_subclass_example'
 
-describe RecumbentBike do
+describe ::Chapter6::RecumbentBike do
   context '何も指定しない場合' do
     xit '未実装である旨をエラー出力すること' do
       expect { described_class.new }.to raise_error(NotImplementedError, 'This RecumbentBike cannot respond to:')
