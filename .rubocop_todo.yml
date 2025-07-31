@@ -13,3 +13,7 @@ Style/OpenStructUse:
 # 学習用コードでxitを使用する際の理由を省略
 RSpec/PendingWithoutReason:
   Enabled: false
+
+# テストダブルで存在しないクラスを使用する場合の警告を無効化
+RSpec/VerifiedDoubleReference:
+  Enabled: false

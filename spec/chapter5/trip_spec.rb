@@ -32,7 +32,7 @@ describe Trip do
   end
 
   context 'prepare_tripが呼ばれたとき' do
-    let(:preparer) { instance_double(Preparer) }
+    let(:preparer) { instance_double('Preparer') }
     let(:trip) { described_class.new }
 
     # 送信メッセージのテスト
