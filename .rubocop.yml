@@ -1,6 +1,9 @@
 inherit_from: .rubocop_todo.yml
-require:
+plugins:
   - rubocop-rspec
+
+AllCops:
+  NewCops: enable
 
 RSpec/ContextWording:
   AllowedPatterns:

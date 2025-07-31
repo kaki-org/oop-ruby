@@ -2,7 +2,7 @@
 
 require 'rspec'
 
-describe ::Chapter2::Gear do
+describe Chapter2::Gear do
   context 'ギアとコグに何も指定しない場合' do
     let(:gear) { described_class.new }
 
@@ -40,7 +40,7 @@ describe ::Chapter2::Gear do
   end
 
   context 'ホイールがリム26、タイヤ1.5のとき' do
-    let(:wheel) { ::Chapter2::Wheel.new(rim: 26, tire: 1.5) }
+    let(:wheel) { Chapter2::Wheel.new(rim: 26, tire: 1.5) }
     let(:gear) { described_class.new(chainring: 52, cog: 11, wheel:) }
 
     it 'ギアインチが137.0909090909091であること' do

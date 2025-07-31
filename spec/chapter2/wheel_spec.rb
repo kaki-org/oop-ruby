@@ -2,7 +2,7 @@
 
 require 'rspec'
 
-describe ::Chapter2::Wheel do
+describe Chapter2::Wheel do
   context 'ホイールのリムが26、タイアが1.5の場合' do
     let(:wheel) { described_class.new(rim: 26, tire: 1.5) }
 

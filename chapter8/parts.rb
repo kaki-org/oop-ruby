@@ -5,6 +5,7 @@ require 'forwardable'
 # 自転車のパーツ
 class Parts
   extend Forwardable
+
   def_delegators :@parts, :size, :each
   include Enumerable
 

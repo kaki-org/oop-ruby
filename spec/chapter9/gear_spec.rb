@@ -2,8 +2,8 @@
 
 require 'rspec'
 
-describe ::Gear do
-  let(:observer) { instance_double('Observer') }
+describe Gear do
+  let(:observer) { instance_double(Observer) }
   let(:gear) do
     described_class.new(
       chainring: 52,

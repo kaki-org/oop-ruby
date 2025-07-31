@@ -2,7 +2,7 @@
 
 require 'rspec'
 
-describe ::Wheel do
+describe Wheel do
   let(:wheel) { described_class.new(rim: 26, tire: 1.5) }
 
   context 'diameterがよばれたとき' do

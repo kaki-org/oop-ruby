@@ -5,3 +5,11 @@
 # one by one as the offenses are removed from the code base.
 # Note that changes in the inspected code, or installation of new
 # versions of RuboCop, may require this file to be generated again.
+
+# OpenStructは学習用コードで使用しているため無効化
+Style/OpenStructUse:
+  Enabled: false
+
+# 学習用コードでxitを使用する際の理由を省略
+RSpec/PendingWithoutReason:
+  Enabled: false
