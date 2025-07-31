@@ -2,7 +2,7 @@
 
 require 'rspec'
 
-describe ::Chapter8::Bicycle do
+describe Chapter8::Bicycle do
   let(:recumbent_config) { [['chain', '9-speed'], ['tire_size', '28'], ['flag', 'tall and orange']] }
   let(:parts) { PartsFactory.build(recumbent_config) }
   let(:recumbent_bike) { described_class.new(size: 'L', parts:) }

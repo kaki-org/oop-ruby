@@ -2,7 +2,7 @@
 
 require 'rspec'
 
-describe ::Gear do
+describe Gear do
   let(:observer) { instance_double('Observer') }
   let(:gear) do
     described_class.new(

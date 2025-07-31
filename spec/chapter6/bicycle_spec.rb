@@ -4,7 +4,7 @@ require 'rspec'
 require 'shared_examples/bicycle_shared_example'
 require 'shared_examples/bicycle_subclass_example'
 
-class StubbedBike < ::Chapter6::Bicycle
+class StubbedBike < Chapter6::Bicycle
   def default_tire_size
     0
   end
@@ -14,7 +14,7 @@ class StubbedBike < ::Chapter6::Bicycle
   end
 end
 
-describe ::Chapter6::Bicycle do
+describe Chapter6::Bicycle do
   context 'タイヤサイズ0の自転車の場合' do
     let(:bike) { described_class.new(tire_size: 0) }
 
@@ -24,7 +24,8 @@ describe ::Chapter6::Bicycle do
   end
 
   context '架空の自転車サブクラスが指定された場合' do
-    let(:subject) { described_class.new(tire_size: 0) }
+    subject { described_class.new(tire_size: 0) }
+
     let(:bike) { subject }
     let(:stubbed_bike) { StubbedBike.new }
 

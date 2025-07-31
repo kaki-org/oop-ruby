@@ -30,7 +30,7 @@ describe GearWrapper do
   end
 
   context 'テストダブルを用いる場合' do
-    let(:wheel) { instance_double('Wheel', diameter: 10) }
+    let(:wheel) { instance_double(Wheel, diameter: 10) }
     let(:gear) { described_class.gear(chainring: 52, cog: 11, wheel:) }
 
     it 'ギア比が4.7272727272727275であること' do

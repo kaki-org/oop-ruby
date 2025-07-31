@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-require_relative './schedulable'
+require_relative 'schedulable'
 module Chapter7
   # 整備士
   class Mechanic

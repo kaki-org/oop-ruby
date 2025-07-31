@@ -4,7 +4,7 @@ require 'rspec'
 require 'shared_examples/bicycle_shared_example'
 require 'shared_examples/bicycle_subclass_example'
 
-describe ::Chapter6::MountainBike do
+describe Chapter6::MountainBike do
   context 'Sサイズのマウンテンバイクの場合' do
     let(:mountain_bike) { described_class.new(size: 'S', front_shock: 'Manitou', rear_shock: 'Fox') }
 

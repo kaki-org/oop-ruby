@@ -12,9 +12,9 @@ describe Parts do # rubocop:disable RSpec/MultipleMemoizedHelpers
 
   context 'パーツ全体をテストする場合' do # rubocop:disable RSpec/MultipleMemoizedHelpers
     let(:road_bike_parts) { described_class.new([chain, road_tire, tape]) }
-    let(:road_bike) { ::Chapter8::Bicycle.new(size: 'L', parts: road_bike_parts) }
+    let(:road_bike) { Chapter8::Bicycle.new(size: 'L', parts: road_bike_parts) }
     let(:mountain_bike_parts) { described_class.new([chain, mountain_tire, front_shock, rear_shock]) }
-    let(:mountain_bike) { ::Chapter8::Bicycle.new(size: 'M', parts: mountain_bike_parts) }
+    let(:mountain_bike) { Chapter8::Bicycle.new(size: 'M', parts: mountain_bike_parts) }
 
     it 'スペアのサイズにこたえること' do
       expect(road_bike.spares.size).to eq 3
@@ -27,7 +27,7 @@ describe Parts do # rubocop:disable RSpec/MultipleMemoizedHelpers
 
   context 'ロードバイクの場合' do # rubocop:disable RSpec/MultipleMemoizedHelpers
     let(:parts) { described_class.new([chain, road_tire, tape]) }
-    let(:road_bike) { ::Chapter8::Bicycle.new(size: 'L', parts:) }
+    let(:road_bike) { Chapter8::Bicycle.new(size: 'L', parts:) }
 
     it 'サイズがLであること' do
       expect(road_bike.size).to eq 'L'
@@ -46,7 +46,7 @@ describe Parts do # rubocop:disable RSpec/MultipleMemoizedHelpers
 
   context 'マウンテンバイクの場合' do # rubocop:disable RSpec/MultipleMemoizedHelpers
     let(:parts) { described_class.new([chain, mountain_tire, front_shock, rear_shock]) }
-    let(:mountain_bike) { ::Chapter8::Bicycle.new(size: 'M', parts:) }
+    let(:mountain_bike) { Chapter8::Bicycle.new(size: 'M', parts:) }
 
     it 'サイズがMであること' do
       expect(mountain_bike.size).to eq 'M'

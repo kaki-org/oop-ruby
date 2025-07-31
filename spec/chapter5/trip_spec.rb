@@ -2,7 +2,7 @@
 
 require 'rspec'
 
-describe ::Trip do
+describe Trip do
   shared_examples 'a preparer' do
     it 'responds to prepare_trip' do
       expect(object).to respond_to(:prepare_trip)
@@ -10,21 +10,21 @@ describe ::Trip do
   end
 
   # 受信メッセージの存在をテスト
-  describe ::Mechanic do
+  describe Mechanic do
     let(:object) { described_class.new }
     let(:trip) { object }
 
     it_behaves_like 'a preparer'
   end
 
-  describe ::TripCoordinator do
+  describe TripCoordinator do
     let(:object) { described_class.new }
     let(:trip) { object }
 
     it_behaves_like 'a preparer'
   end
 
-  describe ::Driver do
+  describe Driver do
     let(:object) { described_class.new }
     let(:trip) { object }
 
