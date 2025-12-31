@@ -5,7 +5,7 @@ git_source(:github) { |repo| "https://github.com/#{repo}.git" }
 
 ruby '4.0.0'
 
+gem 'ostruct'
 gem 'rspec'
 gem 'rubocop'
 gem 'rubocop-rspec'
-gem 'ostruct'
